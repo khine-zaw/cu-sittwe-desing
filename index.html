@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <style>
+        *{
+            box-sizing: border-box;  
+        }
+        body{
+            height: 200vh;
+            scroll-behavior: smooth;
+        }
+        .menu{
+            background-color: rgb(114, 183, 248);
+            height: 120px;
+        }
+        .menu-logo{
+            float: left;
+        }
+        .logo{
+            width: 50px;
+        }
+        .menu-content{
+            padding: 25px;
+        }
+        .menu-content span{
+            position: relative;
+            bottom: 30px;
+            color: white;
+        }
+        .link{
+            float: right;
+            padding-right: 100px;
+            padding-top: 50px;
+        }
+        .link a{
+            display: inline;
+            padding-left: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .link i{
+            color: white;
+            padding-left: 7px;
+        }
+        .link-content{
+            position: fixed;   
+        }
+        .link-content a{
+            display: none;
+        }
+        .link:hover .link-content a{
+            display: block;
+            /* background-color: rgb(115, 123, 131,0.5); */
+            background-color: white;
+            color: black;
+            margin-left: 50px;
+            padding: 13px;
+            border-bottom: 1px solid black;
+            /* border: 2px solid green; */
+            /* border-radius: 10px; */
+        }
+        .main{
+        }
+        .ucss-img{
+            width: 100%;
+            height: 400px;
+        }
+        .main-content{
+            position: absolute;
+            background-color: rgba(115, 123, 131,0.7);
+            padding: 20px;
+            left: 60%;
+            bottom: 50%;
+            color: white;
+            width: 350px;
+        }
+        .about{
+            /* margin-top: 30px; */
+            padding-top: 30px;
+            background-color: #f2f2f2;
+            height: 300px;
+        }
+        .about-pic{
+            float: left;
+            margin-left: 230px;
+            margin-top: 30px;
+        }
+        .about-pic img{
+            width: 300px;
+            height: auto;
+        }
+        .about-content{
+            float: right;
+            width: 500px;
+            margin-right: 230px;
+        }
+        .site{
+
+        }
+        .site-header{
+            display: inline-block;
+            color: rgb(0, 225, 255);
+            position: relative;
+            left: 17%;
+            margin-top: 5%;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+        .site-title{
+            width: 800px;
+            border: 2px solid green;
+            position: relative;
+            margin-top: 3%;
+            left: 17%;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .me{
+            width: 30px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .site-title p{
+            width: 500px;
+            padding-left: 40px;
+        }
+        .p-sign{
+            position: relative;
+            float: right;
+            left: 250px;
+            top: 10px;
+        }
+        .row{
+            background-color: rgb(114, 183, 248);
+            margin-top: 30px;
+            height: 150px;
+        }
+        .cat-header{
+            /* display: inline-block; */
+            color: rgb(0, 225, 255);
+            position: relative;
+            left: 15%;
+            margin-top: 30px;
+            padding-top: 30px;
+            color: white;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+        .col{
+            width: 900px;
+            left: 15%;
+            position: relative;
+            top: 10%;
+            padding-top: 20px;
+        }
+        .col-12{
+            float: left;
+            width: 11%;
+            padding: 5px 5px;
+            border: 1px solid white;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .col2{
+            width: 500px;
+            left: 25%;
+            position: relative;
+            top: 13%;
+        }
+        .col-25{
+            float: left;
+            width: 22%;
+            padding: 5px 5px;
+            border: 1px solid white;
+            margin-left: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .search{
+            /* position: relative; */
+            margin-top: 13%;
+            /* width: 900px; */
+        }
+        .search-header{
+           position: relative;
+           left: 15%;
+           text-transform: uppercase;
+           color: rgb(0, 225, 255);
+           font-size: 30px;
+        }
+        .form{
+            width: 900px;
+            position: relative;
+            left: 15%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-top: 25px;
+        }
+        input[type=text]{
+            width: 600px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        input[type=button]{
+            padding: 10px 20px;
+            background-color: rgb(114, 183, 248);
+            color: white;
+            border-radius: 5px;
+            margin-left: 5px;
+            border: none;
+        }
+        .footer{
+            width: 100%;
+            height: 300px;
+            margin-top: 40px;
+            background-color: rgb(114, 183, 248);
+        }
+        /* .footer-back{ 
+            z-index: 20px;
+        } */
+        .footer-back img{
+            z-index: -20px;
+            opacity: 0.2;
+            width: 100%;
+            height: 300px;
+        }
+        .footer-content{
+            width: 900px;
+            position: relative;
+            bottom: 90%;
+            left: 15%;
+            color: white;
+        }
+        .footer-content h4{
+            text-transform: uppercase;
+        }
+        .footer-content-about{
+            float: left;
+            width: 400px;
+        }
+        .footer-content-info{
+            width: 200px;
+            float: left;
+            padding-left: 30px;
+        }
+        .footer-content-social{
+            float: right;
+        }
+        .footer-content-social i{
+            /* display: flex; */
+            padding-bottom: 15px;
+
+        }
+        .footer-content-social span{
+            padding-left: 10px;
+        }
+        .copyright{
+            background-color: black;
+            height: 70px;
+        }
+        .copyright span{
+            color: white;
+            position: relative;
+            top: -250%;
+            text-align: center;
+            left: 30%;
+            /* width: 100%; */
+            font-size: 10px;
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        @media screen and (max-width:800px){
+            .menu-content{
+                display: none;
+            }
+            .link{
+                float: left;
+                padding-top: 25px;
+                margin: 0;
+            }
+            .link a{
+                display: block;
+                padding-bottom: 20px;
+            }
+            .link i{
+                position: relative;
+                bottom: 35px;
+                left: 65px;
+            }
+            .link-content a{
+                display: none;    
+            }
+            .link:hover .link-content a{
+                display: block;
+                position: relative;
+                background-color: white;
+                color: black;
+                margin-left: 20px;
+                bottom: 30px;
+            }
+            .main-content{
+                width: 100%;
+                overflow: hidden;
+                left: 0;
+                bottom: 22%;
+                z-index: -1px;
+            }
+            .about-pic{
+                margin: 0;
+                padding: 0;
+            }
+            .about-pic img{
+                width: 100%;
+            }
+            .about-content{
+                width: 100%;
+                margin: 0;
+            }
+            .site-header{
+                width: 100%;
+                left: 0;
+            }
+            .site-title{
+                width: 100%;
+                left: 0;
+                padding: 0;
+            }
+            .site-title p{
+                padding: 10px;
+            }
+            .row{
+                height: 250px;
+            }
+            .col{
+                width: 400px;
+                left: 10%;
+            }
+            .col-12{
+                width: 45%;
+                text-align: center;
+                padding-left: 20px;
+            }
+            .col2{
+                width: 400px;
+                left: 10%;
+            }
+            .col-25{
+                width: 45%;
+                text-align: center;
+                padding-left: 20px;
+                /* margin-top: 10px; */
+                margin-bottom: 10px;
+            }
+            .search{
+                /* position: relative; */
+                margin-top: 40%;
+                /* width: 900px; */
+            }
+            .form{
+                width: 100%;
+                position: relative;
+                left: 0;
+                background-color: #f2f2f2;
+                padding: 20px;
+                margin-top: 25px;
+                overflow: hidden;
+            }
+            input[type=text]{
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                margin-bottom: 10px;
+            }
+            input[type=button]{
+                width: 100%;
+                padding: 10px 20px;
+                background-color: rgb(114, 183, 248);
+                color: white;
+                border-radius: 5px;
+                border: none;
+                margin: 0;
+            }
+            .footer{
+                width: 100%;
+                height: 600px;
+                /* margin-top: 30px; */
+                padding-top: 120px;
+                background-color: rgb(114, 183, 248);
+            }
+        /* .footer-back{ 
+            z-index: 20px;
+        } */
+            .footer-back img{
+                z-index: -20px;
+                opacity: 0.2;
+                width: 100%;
+                height: 300px;
+            }
+            .footer-content{
+                width: 400px;
+                position: relative;
+                bottom: 90%;
+                left: 0;
+                color: white;
+                padding-left: 20px;
+            }
+            .footer-content-about{
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .footer-content-info{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            .footer-content-social{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            .copyright{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            .copyright span{
+                color: white;
+                position: relative;
+                top: -600%;
+                text-align: center;
+                left: 30%;
+                width: 200px;
+                /* width: 100%; */
+                font-size: 8px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-content" style="float:left;">
+            <img src="picture/logo.png" class="logo" alt="">
+            <span>Moodle LMS System UCS(Sittway)</span>
+        </div>
+        <div class="link">
+            <a href="#">Home</a>
+            <a href="#">Course</a><i class="fas fa-angle-down fa-1x"></i>
+            <div class="link-content">
+                <a href="#">First Year</a>
+                <a href="#">Second Year</a>
+                <a href="#">Third Year</a>
+                <a href="#">Fourth Year</a>
+                <a href="#">Fifth Year</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <img src="picture/bac.jpg" class="ucss-img" alt="">
+        <div class="main-content">
+            <h3>University of computer studied,sittway</h3>
+            <p>Education on awesome unique moodle theme.</p>
+        </div>
+        <div class="about">
+            <div class="about-pic">
+                <img src="picture/two.jpg" alt="">
+            </div>    
+            <div class="about-content">
+                    <h2 style="text-align: center;">About <span style="color: rgb(0, 225, 255);">Us</span></h2>
+                    <p>
+                        University of Computer Studies in Sittway (UCSS) is located in Pyitawthar quarter, Sittwe, Rakhine State, Myanmar. It was formerly opened as Government Computer College on 1 October 2001, and was promoted to university level on 20 January 2007. Professor Dr. Zaw Tun (PhD (IT)) is the principal of University of Computer Studies (Sittway). In 2018, there are over 300 students in University of Computer Studies (Sittway).
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="site">
+        <div class="site-header">
+            <i class="far fa-address-card"></i>
+            <span>Site Announcement</span>
+        </div>
+        <div class="site-title">
+            <img src="picture/me.jpg" class="me" alt="">
+            <span>Hello</span><br>
+            <span style="padding-left: 30px;">by <span style="color: rgb(0, 225, 255);">U Tun kyaw.</span>Tuesday,10 November 2021,10 Am</span>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta suscipit necessitatibus molestiae dolor velit blanditiis quaerat eius cupiditate, quisquam tempora corporis exercitationem modi
+            </p>
+            <p class="p-sign" style="color: rgb(0, 225, 255);">Permalink <br>Dicuss this topic <span style="color: black;">(0 replies so far)</span></p>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="cat-header">
+            <i class="fas fa-bars"></i>
+            <span>Course Categories</span>
+        </div>
+        <div class="col">
+            <div class="col-12">
+                <small>First Year CT</small>
+            </div>
+            <div class="col-12">
+                <small>First Year CST</small>
+            </div>
+            <div class="col-12">
+                <small>Second Year CS</small>
+            </div>
+            <div class="col-12">
+                <small>Second Year CT</small>
+            </div>
+            <div class="col-12">
+                <small>Third Year CT</small>
+            </div>
+            <div class="col-12">
+                <small>Third Year CS</small>
+            </div>
+            <div class="col-12">
+                <small>Fourth Year CT</small>
+            </div>
+            <div class="col-12">
+                <small>Fourth Year CS</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col2">
+                <div class="col-25">
+                    <small>Fifth Year CT</small>
+                </div>
+                <div class="col-25">
+                    <small>Fifth Year CS</small>
+                </div>
+                <div class="col-25">
+                    <small>DCSC I</small>
+                </div>
+                <div class="col-25">
+                    <small>DCSC II</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="search">
+        <div class="search-header">
+            <i class="fas fa-search"></i>
+            <span>Search Your Courses</span>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Type and Press Search">
+            <input type="button" value="Search">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-back">
+            <img src="picture/footer.jpg" alt="">     
+        </div>
+        <div class="footer-content">
+            <div class="footer-content-about">
+                <h4>About US</h4>
+                <p>
+                    University of Computer Studies in Sittway (UCSS) is located in Pyitawthar quarter, Sittwe, Rakhine State, Myanmar. It was formerly opened as Government Computer College on 1 October 2001, and was promoted to university level on 20 January 2007. Professor Dr. Zaw Tun (PhD (IT)) is the principal of University of Computer Studies (Sittway).
+                </p>
+            </div>
+            <div class="footer-content-info">
+                <h4>Information</h4>
+                <p>Student</p>
+                <p>Teachers</p>
+                <p>Researchers</p>
+                <p>Guest</p>
+            </div>
+            <div class="footer-content-social">
+                <h4>Contact us</h4>
+                <i class="fas fa-map-marker-alt"></i><span>Union Street,Pyi Taw Thar Quarter,Sittwe</span><br>
+                <i class="fas fa-phone-square-alt"></i><span>Phone +95665537207</span><br>
+                <i class="fas fa-envelope"></i><span>Email:info@ucsssittwe.edu.mm</span><br>
+                <i class="fab fa-facebook-square fa-3x"></i>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <span>Copyright &copy; 2021-Developed by Khaing Zaw. Powered by Team M Cube</span>
+    </div>
+</body>
+</html>
